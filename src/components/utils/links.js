@@ -10,3 +10,9 @@ export const Link1 = ({ to, text, selected }) => (
     {text}
   </Link>
 );
+
+export const Link2 = ({ to, icon }) => (
+  <a href={to} target="_blank">
+    {icon}
+  </a>
+);

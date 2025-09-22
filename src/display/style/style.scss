@@ -1,5 +1,9 @@
 @import "./variables";
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   font-family: $font1;

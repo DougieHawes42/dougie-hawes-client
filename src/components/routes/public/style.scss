@@ -1,0 +1,8 @@
+@import "../../../display/style/variables";
+
+.route {
+  max-height: $route-height;
+  min-height: $route-height;
+  overflow: scroll;
+  padding: 0 $x-padding;
+}
