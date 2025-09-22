@@ -11,8 +11,9 @@ export const Link1 = ({ to, text, selected }) => (
   </Link>
 );
 
-export const Link2 = ({ to, icon }) => (
-  <a href={to} target="_blank">
+export const Link2 = ({ to, icon, text }) => (
+  <a className="link link2" href={to} target="_blank">
     {icon}
+    <div className="link2-hover-text">{text}</div>
   </a>
 );

@@ -6,3 +6,32 @@
   overflow: scroll;
   padding: 0 $x-padding;
 }
+
+.home {
+  .home-title-container {
+    text-align: center;
+    .home-title-photo {
+      border-radius: 50%;
+      width: 140px;
+    }
+    .home-title {
+      color: $colour3;
+      margin-top: -21px;
+      font-size: 55px;
+    }
+    .home-subtitle {
+      color: $colour4;
+      font-size: 32px;
+      margin-top: -12px;
+    }
+  }
+  .home-sm-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 50%;
+    min-width: 260px;
+    max-width: 360px;
+    transform: translateX(-50%);
+  }
+}

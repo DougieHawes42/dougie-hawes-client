@@ -34,6 +34,7 @@ const Header = () => {
             selected={selectedPage === "skills"}
           />
           <Link1 to="/about" text="about" selected={selectedPage === "about"} />
+          <Link1 to="/blog" text="blog" selected={selectedPage === "blog"} />
           <Link1 to="/cv" text="cv" selected={selectedPage === "cv"} />
         </div>
         <div className="header-contact-container">

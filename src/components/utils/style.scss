@@ -10,3 +10,21 @@
 .link1-selected {
   color: $colour3 !important;
 }
+
+.link2 {
+  position: relative;
+  text-align: center;
+  .link2-hover-text {
+    color: $colour3;
+    font-size: 14px;
+    opacity: 0;
+    margin-top: -14px;
+    transition: 0.3s ease-in-out opacity;
+    width: 100%;
+  }
+}
+.link2:hover {
+  .link2-hover-text {
+    opacity: 1;
+  }
+}
