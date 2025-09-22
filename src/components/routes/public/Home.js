@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
   FaDev,
   FaGithub,
@@ -9,9 +11,14 @@ import {
 } from "react-icons/fa";
 import { SiHashnode } from "react-icons/si";
 
+import { Card1 } from "../../utils/cards";
 import { Link2 } from "../../utils/links";
 
 import Photo from "../../../display/media/layout/home-photo.jpg";
+
+// hard coding
+import Site from "../../../display/media/site.png";
+// hard coding
 
 import "./style.scss";
 
@@ -59,6 +66,33 @@ const Home = () => {
           to="https://www.youtube.com/@dougiestylecoding"
           icon={<FaYoutube />}
           text="YouTube"
+        />
+      </div>
+      <p className="home-work-intro">
+        Some of my work, more to see on my{" "}
+        <Link className="home-work-intro-link" to="/work">
+          WORK
+        </Link>{" "}
+        page.
+      </p>
+      <div className="home-work-examples">
+        <Card1
+          image={Site}
+          title="FreeDevCoop"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+"
+        />
+        <Card1
+          image={Site}
+          title="Beedies"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+"
+        />
+        <Card1
+          image={Site}
+          title="DevStones"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+"
         />
       </div>
     </div>

@@ -1,5 +1,67 @@
 @import "../../display/style/variables";
 
+.button {
+  color: $colour2 !important;
+  cursor: pointer;
+  font-size: 21px;
+  padding: $y-padding 0;
+  text-align: center;
+  width: 100%;
+}
+
+.button1 {
+  background-color: $colour3;
+}
+.button2 {
+  background-color: $colour4;
+}
+
+.card {
+  max-width: 320px;
+  min-width: 320px;
+}
+
+.card1 {
+  margin: 0 auto;
+  position: relative;
+  .card1-image,
+  .card1-hover-text {
+    height: 225px;
+    width: 320px;
+  }
+  .card1-hover-text {
+    background-color: rgba($color: $colour1, $alpha: 0.42);
+    opacity: 0;
+    padding: $y-padding $x-padding;
+    position: absolute;
+    top: 0;
+    transition: 0.3s ease-in-out opacity;
+    .card1-hover-text-title {
+      color: $colour3;
+      font-size: 42px;
+      text-align: center;
+      text-shadow: 2px 0 0 $colour2, -2px 0 0 $colour2, 0 2px 0 $colour2,
+        0 -2px 0 $colour2, 1.4px 1.4px 0 $colour2, -1.4px 1.4px 0 $colour2,
+        1.4px -1.4px 0 $colour2, -1.4px -1.4px 0 $colour2;
+    }
+    .card1-hover-text-description {
+      color: $colour2 !important;
+      font-size: 24px;
+      line-height: 0.9;
+      min-height: 115px;
+    }
+    .card1-hover-text-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+.card1:hover {
+  .card1-hover-text {
+    opacity: 1;
+  }
+}
+
 .link {
   font-size: $link-font-size;
 }

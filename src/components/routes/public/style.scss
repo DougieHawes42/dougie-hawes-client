@@ -34,4 +34,17 @@
     max-width: 360px;
     transform: translateX(-50%);
   }
+  .home-work-intro {
+    font-size: 28px;
+    margin-top: $y-padding;
+    text-align: center;
+    .home-work-intro-link {
+      color: $colour3;
+    }
+  }
+  .home-work-examples {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $y-padding;
+  }
 }
