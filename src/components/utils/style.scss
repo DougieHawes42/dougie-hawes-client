@@ -1,0 +1,12 @@
+@import "../../display/style/variables";
+
+.link {
+  font-size: $link-font-size;
+}
+
+.link1 {
+  margin-right: 14px;
+}
+.link1-selected {
+  color: $colour3 !important;
+}

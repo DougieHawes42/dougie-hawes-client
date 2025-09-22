@@ -1,0 +1,34 @@
+@import "../../display/style/variables";
+
+.darkmode-toggle {
+  bottom: $y-padding;
+  cursor: pointer;
+  font-size: 42px;
+  position: absolute;
+  right: $x-padding;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-height: $header-height;
+  .header-title-container {
+    padding-left: $x-padding;
+    padding-top: $y-padding;
+  }
+  .header-links {
+    display: flex;
+    .header-contact-container {
+      background-color: $colour3;
+      height: 100%;
+      text-align: center;
+      width: 120px;
+      .header-contact-link {
+        color: $colour2;
+        font-size: $link-font-size;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
