@@ -7,6 +7,17 @@
   padding: 0 $x-padding;
 }
 
+.contact {
+  .qr-container {
+    background-color: $colour2;
+    padding: 5px;
+    width: 210px;
+    .qr-code {
+      width: 200px;
+    }
+  }
+}
+
 .home {
   .home-title-container {
     text-align: center;

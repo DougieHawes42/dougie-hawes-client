@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Header from "./components/layout/Header";
+import DarkmodeToggle from "./components/layout/DarkmodeToggle";
 
 import Home from "./components/routes/public/Home";
 import Work from "./components/routes/public/Work";
@@ -12,7 +13,6 @@ import CV from "./components/routes/public/CV";
 import Contact from "./components/routes/public/Contact";
 
 import "./display/style/style.scss";
-import DarkmodeToggle from "./components/layout/DarkmodeToggle";
 
 const App = () => {
   const [darkmode, setDarkmode] = useState(false);
