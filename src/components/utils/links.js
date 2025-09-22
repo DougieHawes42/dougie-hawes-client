@@ -18,12 +18,9 @@ export const Link2 = ({ to, icon, text }) => (
   </a>
 );
 
-export const Link3 = ({ to, icon, text, details }) => (
+export const Link3 = ({ to, icon, text }) => (
   <a className="link3" href={to} target="_blank">
     <div className="link3-icon">{icon}</div>
-    <div className="link3-text-container">
-      <p className="link3-text">{text}</p>
-      <p className="link3-details">{details}</p>
-    </div>
+    <p className="link3-text">{text}</p>
   </a>
 );

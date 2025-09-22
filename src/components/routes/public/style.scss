@@ -5,16 +5,42 @@
   min-height: $route-height;
   overflow: scroll;
   padding: 0 $x-padding;
+  .route-title {
+    font-size: 60px;
+    text-align: center;
+  }
 }
 
 .contact {
+  .contact-main-links {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 50%;
+    max-width: 600px;
+    transform: translateX(-50%);
+    .contact-main-link {
+      cursor: pointer;
+      * {
+        color: $colour3;
+        font-size: 60px;
+      }
+    }
+  }
   .qr-container {
     background-color: $colour2;
+    height: 190px;
+    margin-left: 50%;
     padding: 5px;
-    width: 210px;
+    width: 190px;
+    transform: translateX(-50%);
     .qr-code {
-      width: 200px;
+      width: 180px;
     }
+  }
+  .contact-links {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
   }
 }
 
