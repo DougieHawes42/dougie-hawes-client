@@ -62,7 +62,7 @@ const Contact = () => {
                 Message
               </label>
               <textarea
-                className="contact-form-input"
+                className="contact-form-input contact-form-textarea"
                 name="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -92,9 +92,7 @@ const Contact = () => {
           {status && <p>{status}</p>}
           <div className="contact-links">
             <div className="contact-links-section">
-              <h3 className="contact-links-section-title">
-                Other Ways to Reach Me
-              </h3>
+              <h3 className="contact-links-section-title">Other Ways</h3>
               <Link3
                 to="mailto:doughawes42@gmail.com"
                 icon={<FaSquareEnvelope />}

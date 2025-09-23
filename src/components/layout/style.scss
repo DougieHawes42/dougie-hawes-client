@@ -6,6 +6,7 @@
   font-size: 42px;
   position: absolute;
   right: $x-padding;
+  z-index: 100;
 }
 
 .header {
@@ -28,6 +29,47 @@
         font-size: $link-font-size;
         height: 100%;
         width: 100%;
+      }
+    }
+  }
+  .header-links-compressed {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    .header-links {
+      display: none;
+    }
+    .header-links-compressed {
+      display: block;
+      padding: 0 $y-padding;
+      position: absolute;
+      text-align: right;
+      right: 0;
+      z-index: 100;
+      .header-links-compressed-icon {
+        cursor: pointer;
+        font-size: 42px;
+      }
+      .header-links-compressed-main {
+        background-color: $colour2;
+        border: 2px solid $colour3;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: -14px;
+        min-width: 140px;
+        .header-links-compressed-contact {
+          background-color: $colour3;
+          color: $colour2;
+          font-size: $link-font-size;
+          text-align: center;
+          width: 100%;
+        }
+      }
+      .header-links-compressed-main-darkmode {
+        background-color: $colour1;
       }
     }
   }

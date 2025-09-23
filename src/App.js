@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div className={`app ${darkmode ? "app-darkmode" : "app-lightmode"}`}>
-      <Header />
+      <Header darkmode={darkmode} />
       <DarkmodeToggle
         darkmode={darkmode}
         onClick={() => setDarkmode(!darkmode)}
