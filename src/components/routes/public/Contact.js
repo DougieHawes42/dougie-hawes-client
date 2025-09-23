@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   FaDev,
   FaGithub,
@@ -18,61 +19,138 @@ import QR from "../../../display/media/layout/qr-code.png";
 import "./style.scss";
 
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const isValidEmail = (value) => /\S+@\S+\.\S+/.test(value);
+
+  const isFormValid = isValidEmail(email) && message.trim().length > 0;
+
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => {};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    setTimeout(() => {
+      setStatus("Message sent successfully!");
+    }, 1500);
+  };
+
   return (
     <div className="route contact">
-      <h2 className="route-title">contact</h2>
-      <div className="contact-main-links">
-        <a className="contact-main-link">
-          <FaSquareEnvelope />
-        </a>
-        <a className="contact-main-link">
-          <FaPhoneSquare />
-        </a>
-        <a
-          className="contact-main-link"
-          href="https://www.linkedin.com/in/dougie-hawes"
-          target="_blank"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          className="contact-main-link"
-          href="https://github.com/DougieHawes42"
-          target="_blank"
-        >
-          <FaGithub />
-        </a>
-      </div>
-      <div className="qr-container">
-        <img className="qr-code" src={QR} alt="" />
-      </div>
-      <div className="contact-links">
-        <Link3 to="https://dev.to/dougiehawes" icon={<FaDev />} text="Dev.To" />
-        <Link3
-          to="https://hashnode.com/@dougiehawes"
-          icon={<SiHashnode />}
-          text="Hashnode"
-        />
-        <Link3
-          to="https://medium.com/@dougiehawes"
-          icon={<FaMedium />}
-          text="Medium"
-        />
-        <Link3
-          to="https://www.instagram.com/dougiestylecoding"
-          icon={<FaInstagram />}
-          text="Instagram"
-        />
-        <Link3
-          to="https://www.tiktok.com/@dougiestylecoding"
-          icon={<FaTiktok />}
-          text="TikTok"
-        />
-        <Link3
-          to="https://www.youtube.com/@dougiestylecoding"
-          icon={<FaYoutube />}
-          text="YouTube"
-        />
+      <h2 className="route-title">Contact Me</h2>
+      <div className="contact-body">
+        <section className="contact-body-section">
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="contact-form-section">
+              <label className="contact-form-label" htmlFor="email">
+                Your Email
+              </label>
+              <input
+                className="contact-form-input"
+                type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="contact-form-section">
+              <label className="contact-form-label" htmlFor="message">
+                Message
+              </label>
+              <textarea
+                className="contact-form-input"
+                name="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              ></textarea>
+            </div>
+            <div className="contact-form-section">
+              <label className="contact-form-label" htmlFor="file">
+                Attach a file (optional)
+              </label>
+              <input
+                className="contact-form-file-input"
+                type="file"
+                name="file"
+                id="file"
+                onChange={handleChange}
+              />
+            </div>
+            <button
+              className="contact-form-button"
+              type="submit"
+              disabled={!isFormValid}
+            >
+              SEND
+            </button>
+          </form>
+          {status && <p>{status}</p>}
+          <div className="contact-links">
+            <div className="contact-links-section">
+              <h3 className="contact-links-section-title">
+                Other Ways to Reach Me
+              </h3>
+              <Link3
+                to="mailto:doughawes42@gmail.com"
+                icon={<FaSquareEnvelope />}
+                text="Email"
+              />
+              <Link3
+                to="tel:+447742148280"
+                icon={<FaPhoneSquare />}
+                text="Phone"
+              />
+              <Link3
+                to="https://www.linkedin.com/in/dougie-hawes"
+                icon={<FaLinkedin />}
+                text="LinkedIn"
+              />
+              <Link3
+                to="https://github.com/DougieHawes42"
+                icon={<FaGithub />}
+                text="GitHub"
+              />
+            </div>
+            <div className="contact-links-section">
+              <h3 className="contact-links-section-title">Find Me Elsewhere</h3>
+              <Link3
+                to="https://dev.to/dougiehawes"
+                icon={<FaDev />}
+                text="Dev.To"
+              />
+              <Link3
+                to="https://hashnode.com/@dougiehawes"
+                icon={<SiHashnode />}
+                text="Hashnode"
+              />
+              <Link3
+                to="https://medium.com/@dougiehawes"
+                icon={<FaMedium />}
+                text="Medium"
+              />
+              <Link3
+                to="https://www.instagram.com/dougiestylecoding"
+                icon={<FaInstagram />}
+                text="Instagram"
+              />
+              <Link3
+                to="https://www.tiktok.com/@dougiestylecoding"
+                icon={<FaTiktok />}
+                text="TikTok"
+              />
+              <Link3
+                to="https://www.youtube.com/@dougiestylecoding"
+                icon={<FaYoutube />}
+                text="YouTube"
+              />
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

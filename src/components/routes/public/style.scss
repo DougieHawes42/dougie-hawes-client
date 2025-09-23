@@ -12,35 +12,53 @@
 }
 
 .contact {
-  .contact-main-links {
-    display: flex;
-    justify-content: space-around;
-    margin-left: 50%;
-    max-width: 600px;
-    transform: translateX(-50%);
-    .contact-main-link {
-      cursor: pointer;
-      * {
-        color: $colour3;
-        font-size: 60px;
+  .contact-body {
+    width: 100%;
+    .contact-body-section {
+      margin-left: 50%;
+      max-width: 800px;
+      transform: translateX(-50%);
+      width: 100%;
+      .contact-form {
+        width: 100%;
+        .contact-form-section {
+          width: 100%;
+          .contact-form-label {
+            color: $colour3;
+            font-size: 28px;
+            width: 100%;
+          }
+          .contact-form-input {
+            border: 2px solid $colour4;
+            font-size: 21px;
+            width: 100%;
+          }
+          .contact-form-file-input {
+            width: 100%;
+          }
+        }
+        .contact-form-button {
+          background-color: $colour3;
+          border: none;
+          color: $colour2;
+          font-size: 21px;
+          margin-top: $y-padding;
+          width: 100%;
+        }
+      }
+      .contact-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: $y-padding;
+        .contact-links-section {
+          .contact-links-section-title {
+            color: $colour4;
+            font-size: 21px;
+            font-weight: 100;
+          }
+        }
       }
     }
-  }
-  .qr-container {
-    background-color: $colour2;
-    height: 190px;
-    margin-left: 50%;
-    padding: 5px;
-    width: 190px;
-    transform: translateX(-50%);
-    .qr-code {
-      width: 180px;
-    }
-  }
-  .contact-links {
-    margin-left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
   }
 }
 
