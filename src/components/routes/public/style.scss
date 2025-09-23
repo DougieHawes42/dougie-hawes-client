@@ -105,6 +105,35 @@
   }
 }
 
+.skills {
+  .skills-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+}
+
+.work {
+  .work-links {
+    display: flex;
+    justify-content: space-around;
+    .work-link {
+      color: $colour3;
+      cursor: pointer;
+      font-size: 35px;
+    }
+    .work-link-selected {
+      color: $colour4;
+    }
+  }
+  .work-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $y-padding;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .home {
     .home-sm-links {

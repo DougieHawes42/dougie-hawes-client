@@ -19,3 +19,13 @@ export const Card1 = ({ codeLink, siteLink, image, title, description }) => (
     </div>
   </div>
 );
+
+export const Card2 = ({ icon, name, level }) => {
+  return (
+    <div className="card card2">
+      <div className="card2-icon">{icon}</div>
+      <h3 className="card2-name">{name}</h3>
+      <p className="card2-level">{level}</p>
+    </div>
+  );
+};

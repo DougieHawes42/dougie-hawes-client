@@ -1,7 +1,7 @@
 import "./style.scss";
 
 const CV = () => {
-  return <div>CV</div>;
+  return <div className="route cv">CV</div>;
 };
 
 export default CV;

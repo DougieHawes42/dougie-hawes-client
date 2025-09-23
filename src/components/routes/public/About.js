@@ -1,7 +1,7 @@
 import "./style.scss";
 
 const About = () => {
-  return <div>About</div>;
+  return <div className="route about">About</div>;
 };
 
 export default About;

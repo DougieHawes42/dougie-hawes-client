@@ -40,7 +40,7 @@ const Contact = () => {
 
   return (
     <div className="route contact">
-      <h2 className="route-title">Contact Me</h2>
+      <h2 className="route-title">contact me</h2>
       <div className="contact-body">
         <section className="contact-body-section">
           <form className="contact-form" onSubmit={handleSubmit}>

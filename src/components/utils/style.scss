@@ -17,12 +17,12 @@
 }
 
 .card {
-  max-width: 320px;
-  min-width: 320px;
+  margin: 0 auto;
 }
 
 .card1 {
-  margin: 0 auto;
+  max-width: 320px;
+  min-width: 320px;
   position: relative;
   .card1-image,
   .card1-hover-text {
@@ -59,6 +59,27 @@
 .card1:hover {
   .card1-hover-text {
     opacity: 1;
+  }
+}
+
+.card2 {
+  max-width: 160px;
+  margin-bottom: 28px;
+  min-width: 160px;
+  text-align: center;
+  .card2-icon {
+    font-size: 60px;
+    * {
+      color: $colour3;
+    }
+  }
+  .card2-name {
+    font-size: 42px;
+    margin-top: -21px;
+  }
+  .card2-level {
+    color: $colour4;
+    margin-top: -7px;
   }
 }
 
