@@ -4,7 +4,7 @@ import { Button1, Button2 } from "./buttons";
 
 import "./style.scss";
 
-export const Card1 = ({ codeLink, siteLink, image, title, description }) => (
+export const Card1 = ({ siteLink, image, title, description }) => (
   <div className="card card1">
     <img className="card1-image" src={image} alt="" />
     <div className="card1-hover-text">
@@ -13,8 +13,7 @@ export const Card1 = ({ codeLink, siteLink, image, title, description }) => (
         <p className="card1-hover-text-description">{description}</p>
       </Link>
       <div className="card1-hover-text-buttons">
-        <Button1 to={siteLink} />
-        <Button2 to={codeLink} />
+        <Button2 to={siteLink} />
       </div>
     </div>
   </div>

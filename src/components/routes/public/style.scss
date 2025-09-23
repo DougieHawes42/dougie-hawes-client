@@ -11,6 +11,22 @@
   }
 }
 
+.about {
+  .about-section {
+    .about-heading {
+      color: $colour3;
+      font-size: 35px;
+    }
+    .about-subheading {
+      color: $colour4;
+      font-size: 21px;
+    }
+    .about-paragraph {
+      font-size: 18px;
+    }
+  }
+}
+
 .contact {
   .contact-body {
     width: 100%;

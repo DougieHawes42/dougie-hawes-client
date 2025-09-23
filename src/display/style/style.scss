@@ -34,7 +34,9 @@ h6 {
 }
 
 .app-lightmode {
-  background-color: $colour2;
+  background-blend-mode: screen;
+  background-color: rgba($color: $colour2, $alpha: 0.7);
+  background-image: url("../media/layout/light-background.jpg");
   * {
     color: $colour1;
   }
