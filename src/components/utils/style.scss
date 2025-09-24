@@ -87,6 +87,7 @@
   border-radius: 0 0 21px 21px;
   border-style: solid;
   border-width: 2px;
+  height: 260px;
   margin: 7px 7px 21px 7px;
   width: 300px;
   .card3-image-container {
@@ -99,7 +100,7 @@
   .card3-text-container {
     max-height: 180px;
     overflow: hidden;
-    padding: $y-padding $x-padding;
+    padding: 0 14px 14px 14px;
     .card3-title {
       color: $colour3;
       font-size: 35px;
@@ -109,6 +110,9 @@
       color: $colour4;
       font-size: 21px;
       margin-top: -7px;
+    }
+    .card3-text {
+      text-align: justify;
     }
   }
 }

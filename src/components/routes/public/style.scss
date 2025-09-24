@@ -13,16 +13,27 @@
 
 .about {
   .about-section {
-    .about-heading {
+    height: 350px;
+    position: relative;
+    .about-section-header {
       color: $colour3;
       font-size: 35px;
     }
-    .about-subheading {
-      color: $colour4;
+    .about-section-text {
       font-size: 21px;
+      max-width: 600px;
+      position: absolute;
+      right: 0;
     }
-    .about-paragraph {
-      font-size: 18px;
+  }
+  .about-section-left {
+    * {
+      text-align: left;
+    }
+  }
+  .about-section-right {
+    * {
+      text-align: right;
     }
   }
 }
@@ -32,6 +43,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: $y-padding;
   }
 }
 

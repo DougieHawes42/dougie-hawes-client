@@ -36,7 +36,7 @@ export const Card3 = ({ id, image, title, date, text }) => (
       <div className="card3-text-container">
         <h3 className="card3-title">{title}</h3>
         <p className="card3-date">{date}</p>
-        <div className="card3-text">{text}</div>
+        <p className="card3-text">{text}</p>
       </div>
     </div>
   </Link>
