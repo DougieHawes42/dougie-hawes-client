@@ -54,7 +54,7 @@
         font-size: 42px;
       }
       .header-links-compressed-main {
-        background-color: $colour2;
+        background-color: rgba($color: $colour2, $alpha: 0.7);
         border: 2px solid $colour3;
         display: grid;
         grid-template-columns: 1fr;

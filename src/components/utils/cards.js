@@ -19,12 +19,25 @@ export const Card1 = ({ siteLink, image, title, description }) => (
   </div>
 );
 
-export const Card2 = ({ icon, name, level }) => {
-  return (
-    <div className="card card2">
-      <div className="card2-icon">{icon}</div>
-      <h3 className="card2-name">{name}</h3>
-      <p className="card2-level">{level}</p>
+export const Card2 = ({ icon, name, level }) => (
+  <div className="card card2">
+    <div className="card2-icon">{icon}</div>
+    <h3 className="card2-name">{name}</h3>
+    <p className="card2-level">{level}</p>
+  </div>
+);
+
+export const Card3 = ({ id, image, title, date, text }) => (
+  <Link to={`/blog/${id}`}>
+    <div className="card card3">
+      <div className="card3-image-container">
+        <img className="card3-image" src={image} alt="" />
+      </div>
+      <div className="card3-text-container">
+        <h3 className="card3-title">{title}</h3>
+        <p className="card3-date">{date}</p>
+        <div className="card3-text">{text}</div>
+      </div>
     </div>
-  );
-};
+  </Link>
+);

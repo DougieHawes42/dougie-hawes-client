@@ -29,6 +29,7 @@ h6 {
 .app-darkmode {
   background-color: $colour1;
   * {
+    border-color: $colour2;
     color: $colour2;
   }
 }
@@ -38,6 +39,7 @@ h6 {
   background-color: rgba($color: $colour2, $alpha: 0.7);
   background-image: url("../media/layout/light-background.jpg");
   * {
+    border-color: $colour1;
     color: $colour1;
   }
 }

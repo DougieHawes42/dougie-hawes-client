@@ -27,6 +27,14 @@
   }
 }
 
+.blog {
+  .blog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
 .contact {
   .contact-body {
     width: 100%;
