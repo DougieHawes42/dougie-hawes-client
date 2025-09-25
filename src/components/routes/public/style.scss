@@ -47,6 +47,44 @@
   }
 }
 
+.blog-item {
+  .blog-item-title-box {
+    text-align: center;
+    .blog-item-title {
+      color: $colour3;
+      font-size: 42px;
+    }
+    .blog-item-subtitle {
+      font-size: 28px;
+      margin-top: -14px;
+    }
+    .blog-item-date {
+      color: $colour4;
+      margin-top: -7px;
+    }
+  }
+  .blog-item-image-box {
+    margin-left: 50%;
+    max-width: 420px;
+    transform: translateX(-50%);
+    .blog-item-image {
+      width: 100%;
+    }
+  }
+  .blog-item-text {
+    margin-left: 50%;
+    max-width: 1200px;
+    min-width: 1200px;
+    transform: translateX(-50%);
+  }
+  .blog-item-cta {
+    display: flex;
+    margin-left: 50%;
+    max-width: 420px;
+    transform: translateX(-50%);
+  }
+}
+
 .contact {
   .contact-body {
     width: 100%;

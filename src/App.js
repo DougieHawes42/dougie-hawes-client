@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/layout/Header";
 import DarkmodeToggle from "./components/layout/DarkmodeToggle";
 
+import SignIn from "./components/routes/private/SignIn";
+
 import Home from "./components/routes/public/Home";
 import Work from "./components/routes/public/Work";
 import WorkItem from "./components/routes/public/WorkItem";
@@ -36,6 +38,7 @@ const App = () => {
         <Route path="/blog/:id" element={<BlogItem />} darkmode={darkmode} />
         <Route path="/cv" element={<CV />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/secretentrance/42" element={<SignIn />} />
       </Routes>
     </div>
   );
