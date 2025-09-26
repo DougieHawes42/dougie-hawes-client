@@ -1,37 +1,40 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+import { Button3 } from "../../utils/buttons";
+import { Input1 } from "../../utils/inputs";
 
 import "./style.scss";
 
 const SignIn = () => {
-  const [message, setMessage] = useState();
+  const [formData, setFormData] = useState({ username: "", password: "" });
 
-  useEffect(() => {
-    const fetchMessage = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/auth`,
-          {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-          }
-        );
+  const { username, password } = formData;
 
-        const data = await response.json();
-
-        console.log(data.message);
-        setMessage(data.message);
-      } catch (error) {
-        console.error("Error fetching backend message:", error);
-      }
-    };
-
-    fetchMessage();
-  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
 
   return (
-    <div>
-      SignIn
-      {message && <p>{message}</p>}
+    <div className="route sign-in">
+      <form className="sign-in-form" onSubmit={handleSubmit}>
+        <Input1
+          label="username"
+          value={username}
+          onChange={(e) =>
+            setFormData({ ...formData, username: e.target.value })
+          }
+        />
+        <Input1
+          label="password"
+          type="password"
+          value={password}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
+        />
+        <Button3 />
+      </form>
     </div>
   );
 };

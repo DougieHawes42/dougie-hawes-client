@@ -4,22 +4,28 @@
   color: $colour2 !important;
   cursor: pointer;
   font-size: 21px;
-  padding: $y-padding 0;
   text-align: center;
   width: 100%;
 }
-
+.button1,
+.button2 {
+  padding: $y-padding 0;
+}
 .button1 {
   background-color: $colour3;
 }
 .button2 {
   background-color: $colour4;
 }
+.button3 {
+  background-color: $colour3;
+  margin-top: $y-padding;
+  width: 100%;
+}
 
 .card {
   margin: 0 auto;
 }
-
 .card1 {
   max-width: 320px;
   min-width: 320px;
@@ -61,7 +67,6 @@
     opacity: 1;
   }
 }
-
 .card2 {
   max-width: 160px;
   margin-bottom: 28px;
@@ -82,7 +87,6 @@
     margin-top: -7px;
   }
 }
-
 .card3 {
   border-radius: 0 0 21px 21px;
   border-style: solid;
@@ -116,17 +120,27 @@
   }
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  .input-label {
+    font-size: 28px;
+  }
+  .input {
+    font-size: 21px;
+    width: 100%;
+  }
+}
+
 .link {
   font-size: $link-font-size;
 }
-
 .link1 {
   margin-right: 14px;
 }
 .link1-selected {
   color: $colour3 !important;
 }
-
 .link2 {
   position: relative;
   text-align: center;
@@ -144,7 +158,6 @@
     opacity: 1;
   }
 }
-
 .link3 {
   display: flex;
   .link3-icon {

@@ -5,6 +5,7 @@ import Header from "./components/layout/Header";
 import DarkmodeToggle from "./components/layout/DarkmodeToggle";
 
 import SignIn from "./components/routes/private/SignIn";
+import Dashboard from "./components/routes/private/Dashboard";
 
 import Home from "./components/routes/public/Home";
 import Work from "./components/routes/public/Work";
@@ -39,6 +40,7 @@ const App = () => {
         <Route path="/cv" element={<CV />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/secretentrance/42" element={<SignIn />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );
