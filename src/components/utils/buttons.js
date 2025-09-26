@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 import "./style.scss";
 
-export const Button1 = ({ to }) => (
+export const Button1 = ({ to, text }) => (
   <a className="button button1" href={to} target="_blank">
-    VIEW CODE
+    {text}
   </a>
 );
 

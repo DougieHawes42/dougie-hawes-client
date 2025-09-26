@@ -2,10 +2,6 @@ import { useState } from "react";
 
 import { Card1 } from "../../utils/cards";
 
-// hard coding
-import Site from "../../../display/media/site.png";
-// hard coding
-
 import "./style.scss";
 
 const Work = () => {
@@ -63,60 +59,11 @@ const Work = () => {
         </div>
       </div>
       <div className="work-grid">
-        <Card1
-          image={Site}
-          title="FreeDevCoop"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      "
-        />
-        <Card1
-          image={Site}
-          title="Beedies"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      "
-        />
-        <Card1
-          image={Site}
-          title="DevStones"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      "
-        />{" "}
-        <Card1
-          image={Site}
-          title="FreeDevCoop"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              "
-        />
-        <Card1
-          image={Site}
-          title="Beedies"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              "
-        />
-        <Card1
-          image={Site}
-          title="DevStones"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              "
-        />{" "}
-        <Card1
-          image={Site}
-          title="FreeDevCoop"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      "
-        />
-        <Card1
-          image={Site}
-          title="Beedies"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      "
-        />
-        <Card1
-          image={Site}
-          title="DevStones"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      "
-        />
+        {/* <Card1
+          image={}
+          title=""
+          description=""
+        /> */}
       </div>
     </div>
   );
