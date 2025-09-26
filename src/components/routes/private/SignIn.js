@@ -18,6 +18,7 @@ const SignIn = () => {
 
         const data = await response.json();
 
+        console.log(data.message);
         setMessage(data.message);
       } catch (error) {
         console.error("Error fetching backend message:", error);
