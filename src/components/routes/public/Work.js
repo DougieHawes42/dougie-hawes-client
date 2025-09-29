@@ -3,6 +3,10 @@ import { useState } from "react";
 
 import { Card1 } from "../../utils/cards";
 
+// hard coding
+import Site from "../../../display/media/site.png";
+// hard coding
+
 import "./style.scss";
 
 const Work = () => {
@@ -65,11 +69,7 @@ const Work = () => {
         </div>
       </div>
       <div className="work-grid">
-        {/* <Card1
-          image={}
-          title=""
-          description=""
-        /> */}
+        <Card1 image={Site} title="Title1" description="" />
       </div>
     </motion.div>
   );

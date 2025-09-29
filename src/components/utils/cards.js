@@ -1,11 +1,18 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import { Button1, Button2 } from "./buttons";
+import { Button2 } from "./buttons";
 
 import "./style.scss";
 
 export const Card1 = ({ siteLink, image, title, description }) => (
-  <div className="card card1">
+  <motion.div
+    initial={{ scale: 0 }}
+    whileInView={{ scale: 1 }}
+    transition={{ duration: 0.6, ease: "easeIn" }}
+    viewport={{ once: true, amount: 0.3 }}
+    className="card card1"
+  >
     <img className="card1-image" src={image} alt="" />
     <div className="card1-hover-text">
       <Link to={`/work/${title}`}>
@@ -16,20 +23,32 @@ export const Card1 = ({ siteLink, image, title, description }) => (
         <Button2 to={siteLink} />
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 export const Card2 = ({ icon, name, level }) => (
-  <div className="card card2">
+  <motion.div
+    initial={{ scale: 0 }}
+    whileInView={{ scale: 1 }}
+    transition={{ duration: 0.6, ease: "easeIn" }}
+    viewport={{ once: true, amount: 0.3 }}
+    className="card card2"
+  >
     <div className="card2-icon">{icon}</div>
     <h3 className="card2-name">{name}</h3>
     <p className="card2-level">{level}</p>
-  </div>
+  </motion.div>
 );
 
 export const Card3 = ({ id, image, title, date, text }) => (
   <Link to={`/blog/${id}`}>
-    <div className="card card3">
+    <motion.div
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1 }}
+      transition={{ duration: 0.6, ease: "easeIn" }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="card card3"
+    >
       <div className="card3-image-container">
         <img className="card3-image" src={image} alt="" />
       </div>
@@ -38,6 +57,6 @@ export const Card3 = ({ id, image, title, date, text }) => (
         <p className="card3-date">{date}</p>
         <p className="card3-text">{text}</p>
       </div>
-    </div>
+    </motion.div>
   </Link>
 );
