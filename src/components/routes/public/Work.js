@@ -1,5 +1,7 @@
+import axios from "axios";
+
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Card1 } from "../../utils/cards";
 
@@ -10,6 +12,7 @@ import Site from "../../../display/media/site.png";
 import "./style.scss";
 
 const Work = () => {
+  const [workItems, setWorkItems] = useState([]);
   const [selectedLinks, setSelectedLinks] = useState({
     apps: true,
     sites: true,
@@ -17,6 +20,22 @@ const Work = () => {
   });
 
   const { apps, sites, games } = selectedLinks;
+
+  useEffect(() => {
+    const fetchWorks = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/work`
+        );
+        setWorkItems(res.data);
+      } catch (err) {
+        console.error("Error fetching work items:", err);
+        setError("Failed to fetch work items");
+      }
+    };
+
+    fetchWorks();
+  }, []);
 
   return (
     <motion.div
@@ -69,7 +88,13 @@ const Work = () => {
         </div>
       </div>
       <div className="work-grid">
-        <Card1 image={Site} title="Title1" description="" />
+        {workItems ? (
+          workItems.map((w) => (
+            <Card1 key={w._id} image={Site} title={w.title} description="" />
+          ))
+        ) : (
+          <p>loading...</p>
+        )}
       </div>
     </motion.div>
   );
