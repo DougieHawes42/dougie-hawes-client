@@ -1,8 +1,21 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Input1 } from "../../utils/inputs";
 
 import "./style.scss";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate("/");
+    }
+  }, [navigate]);
+
   return (
     <div className="route dashboard">
       <div className="dashboard-column">

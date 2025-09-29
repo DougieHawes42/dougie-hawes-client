@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Button3 } from "../../utils/buttons";
 import { Input1 } from "../../utils/inputs";
@@ -6,24 +7,62 @@ import { Input1 } from "../../utils/inputs";
 import "./style.scss";
 
 const SignIn = () => {
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
-  const { username, password } = formData;
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const { email, password } = formData;
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/dashboard"); // redirect if logged in already
+    }
+  }, [navigate]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    try {
+      // const res = await fetch(
+      //   `${process.env.REACT_APP_BACKEND_URL}/auth/signin`,
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(formData),
+      //   }
+      // );
+
+      const res = await fetch(`http://localhost:5000/auth/signin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Sign in failed");
+      }
+
+      localStorage.setItem("token", data.token);
+
+      navigate("/dashboard");
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
     <div className="route sign-in">
       <form className="sign-in-form" onSubmit={handleSubmit}>
         <Input1
-          label="username"
-          value={username}
-          onChange={(e) =>
-            setFormData({ ...formData, username: e.target.value })
-          }
+          label="email"
+          value={email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
         <Input1
           label="password"
