@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   SiHtml5,
   SiCss3,
@@ -44,14 +45,24 @@ const Skills = () => {
   ];
 
   return (
-    <div className="route skills">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="route skills"
+    >
       <h2 className="route-title">skills</h2>
       <div className="skills-grid">
         {skills.map((skill, i) => (
-          <Card2 name={skill.name} icon={skill.icon} level={skill.level} />
+          <Card2
+            key={i}
+            name={skill.name}
+            icon={skill.icon}
+            level={skill.level}
+          />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

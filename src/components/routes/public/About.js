@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import "./style.scss";
 
 // hard coding
@@ -6,9 +8,16 @@ import image from "../../../display/media/layout/home-photo.jpg";
 
 const About = () => {
   return (
-    <div className="route about">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="route about"
+    >
       <div className="about-section about-section-left">
-        <img className="about-section-image" src={image} alt="" />
+        <div className="about-section-image-container">
+          <img className="about-section-image" src={image} alt="" />
+        </div>
         <div className="about-section-text">
           <h3 className="about-section-header">about me</h3>
           <p className="about-section-text-body">
@@ -36,10 +45,14 @@ const About = () => {
             which needs a website to make visible to the world.
           </p>
         </div>
-        <img className="about-section-image" src={image} alt="" />
+        <div className="about-section-image-container">
+          <img className="about-section-image" src={image} alt="" />
+        </div>
       </div>
       <div className="about-section about-section-left">
-        <img className="about-section-image" src={image} alt="" />
+        <div className="about-section-image-container">
+          <img className="about-section-image" src={image} alt="" />
+        </div>
         <div className="about-section-text">
           <h3 className="about-section-header">my qualities</h3>
           <p className="about-section-text-body">
@@ -98,10 +111,14 @@ const About = () => {
             send out my first applications.
           </p>
         </div>
-        <img className="about-section-image" src={image} alt="" />
+        <div className="about-section-image-container">
+          <img className="about-section-image" src={image} alt="" />
+        </div>
       </div>
       <div className="about-section about-section-left">
-        <img className="about-section-image" src={image} alt="" />
+        <div className="about-section-image-container">
+          <img className="about-section-image" src={image} alt="" />
+        </div>
         <div className="about-section-text">
           <h3 className="about-section-header">when I'm not programming</h3>
           <p className="about-section-text-body">
@@ -116,7 +133,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

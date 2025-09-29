@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -21,7 +22,12 @@ const Header = ({ darkmode }) => {
   }, [location]);
 
   return (
-    <header className="header">
+    <motion.header
+      initial={{ y: -50 }}
+      whileInView={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="header"
+    >
       <div
         className="header-title-container"
         onClick={() => setMenuOpen(false)}
@@ -101,7 +107,7 @@ const Header = ({ darkmode }) => {
           </div>
         )}
       </div>
-    </header>
+    </motion.header>
   );
 };
 

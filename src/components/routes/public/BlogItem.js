@@ -1,10 +1,17 @@
+import { motion } from "framer-motion";
+
 import { Link1 } from "../../utils/links";
 
 import "./style.scss";
 
 const BlogItem = () => {
   return (
-    <div className="route blog-item">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="route blog-item"
+    >
       <div className="blog-item-title-box">
         <h3 className="blog-item-title"></h3>
         <h3 className="blog-item-subtitle"></h3>
@@ -25,7 +32,7 @@ const BlogItem = () => {
           <Link1 to="/contact" text="contact" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

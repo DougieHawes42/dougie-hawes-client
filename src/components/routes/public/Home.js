@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import {
@@ -24,7 +25,12 @@ import "./style.scss";
 
 const Home = () => {
   return (
-    <div className="route home">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="route home"
+    >
       <div className="home-title-container">
         <img className="home-title-photo" src={Photo} alt="" />
         <h1 className="home-title">Dougie Hawes</h1>
@@ -95,7 +101,7 @@ const Home = () => {
 "
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

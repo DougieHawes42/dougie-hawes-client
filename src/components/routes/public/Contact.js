@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   FaDev,
@@ -39,7 +40,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="route contact">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="route contact"
+    >
       <h2 className="route-title">contact me</h2>
       <div className="contact-body">
         <section className="contact-body-section">
@@ -150,7 +156,7 @@ const Contact = () => {
           </div>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

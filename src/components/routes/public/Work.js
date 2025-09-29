@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { Card1 } from "../../utils/cards";
@@ -14,7 +15,12 @@ const Work = () => {
   const { apps, sites, games } = selectedLinks;
 
   return (
-    <div className="route work">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="route work"
+    >
       <h2 className="route-title">work</h2>
       <div className="work-links">
         <div
@@ -65,7 +71,7 @@ const Work = () => {
           description=""
         /> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
