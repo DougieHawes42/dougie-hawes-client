@@ -30,7 +30,6 @@ const Work = () => {
         setWorkItems(res.data);
       } catch (err) {
         console.error("Error fetching work items:", err);
-        setError("Failed to fetch work items");
       }
     };
 

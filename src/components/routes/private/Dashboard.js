@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Input1 } from "../../utils/inputs";
+import BlogForm from "./BlogForm";
+import WorkForm from "./WorkForm";
 
 import "./style.scss";
 
@@ -18,20 +19,8 @@ const Dashboard = () => {
 
   return (
     <div className="route dashboard">
-      <div className="dashboard-column">
-        <h2 className="dashboard-column-title">submit work</h2>
-        <form className="dashboard-form">
-          <Input1 label="app name" />
-          <Input1 label="subtitle" />
-        </form>
-      </div>
-      <div className="dashboard-column">
-        <h2 className="dashboard-column-title">submit blog</h2>
-        <form className="dashboard-form">
-          <Input1 label="title" />
-          <Input1 label="subtitle" />
-        </form>
-      </div>
+      <WorkForm />
+      <BlogForm />
     </div>
   );
 };

@@ -14,7 +14,7 @@ export const Button2 = ({ to }) => (
   </a>
 );
 
-export const Button3 = ({}) => (
+export const Button3 = () => (
   <button className="button button3" type="submit">
     SUBMIT
   </button>
