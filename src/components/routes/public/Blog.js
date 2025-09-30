@@ -5,10 +5,6 @@ import { motion } from "framer-motion";
 
 import { Card3 } from "../../utils/cards";
 
-// hard coding
-import Site from "../../../display/media/site.png";
-// hard coding
-
 import "./style.scss";
 
 const Blog = () => {
@@ -40,8 +36,9 @@ const Blog = () => {
         {blogItems ? (
           blogItems.map((b) => (
             <Card3
+              key={b._id}
               id={b._id}
-              image={Site}
+              image={`${process.env.REACT_APP_BACKEND_URL}${b.image.url}`}
               title={b.title}
               date="24.9.25"
               text={b.html}

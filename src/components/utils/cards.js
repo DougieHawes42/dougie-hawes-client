@@ -55,7 +55,12 @@ export const Card3 = ({ id, image, title, date, text }) => (
       <div className="card3-text-container">
         <h3 className="card3-title">{title}</h3>
         <p className="card3-date">{date}</p>
-        <p className="card3-text">{text}</p>
+        <div
+          className="card3-text"
+          dangerouslySetInnerHTML={{
+            __html: text,
+          }}
+        ></div>
       </div>
     </motion.div>
   </Link>

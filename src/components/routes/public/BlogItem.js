@@ -16,13 +16,9 @@ const BlogItem = () => {
   useEffect(() => {
     const fetchBlogItem = async () => {
       try {
-        console.log("Fetching blog item with ID:", id);
-
         const res = await axios.get(
           `${process.env.REACT_APP_BACKEND_URL}/blog/${id}`
         );
-
-        console.log("Response data:", res.data); // <-- logs correct fetched data
 
         setBlogItem(res.data);
       } catch (err) {

@@ -7,15 +7,23 @@
 }
 
 .dashboard {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: $y-padding;
-  max-width: 1300px;
+  .dashboard-toggle {
+    display: flex;
+    justify-content: space-around;
+    .dashboard-toggle-link {
+      color: $colour4;
+      cursor: pointer;
+      font-size: 21px;
+    }
+  }
   .dashboard-column {
+    margin-left: 50%;
     max-width: 600px;
     min-width: 600px;
+    transform: translateX(-50%);
     .dashboard-column-title {
+      color: $colour3;
+      font-size: 42px;
     }
   }
 }

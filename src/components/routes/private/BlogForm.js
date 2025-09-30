@@ -9,9 +9,9 @@ import "./style.scss";
 
 const BlogForm = () => {
   const [formData, setFormData] = useState({
-    title: "title1",
-    subtitle: "subtitle1",
-    html: "<h3>subtitle1</h3><p>lorem ipsum...</p>",
+    title: "",
+    subtitle: "",
+    html: "",
   });
   const [file, setFile] = useState(null);
 

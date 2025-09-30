@@ -5,10 +5,6 @@ import { useEffect, useState } from "react";
 
 import { Card1 } from "../../utils/cards";
 
-// hard coding
-import Site from "../../../display/media/site.png";
-// hard coding
-
 import "./style.scss";
 
 const Work = () => {
@@ -35,6 +31,8 @@ const Work = () => {
 
     fetchWorks();
   }, []);
+
+  console.log(workItems);
 
   return (
     <motion.div
@@ -88,9 +86,7 @@ const Work = () => {
       </div>
       <div className="work-grid">
         {workItems ? (
-          workItems.map((w) => (
-            <Card1 key={w._id} image={Site} title={w.title} description="" />
-          ))
+          workItems.map((w) => <Card1 key={w._id} title={w.title} />)
         ) : (
           <p>loading...</p>
         )}

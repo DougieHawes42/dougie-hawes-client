@@ -7,6 +7,8 @@ import WorkForm from "./WorkForm";
 import "./style.scss";
 
 const Dashboard = () => {
+  const [showBlog, setShowBlog] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,8 +21,21 @@ const Dashboard = () => {
 
   return (
     <div className="route dashboard">
-      <WorkForm />
-      <BlogForm />
+      <div className="dashboard-toggle">
+        <div
+          className="dashboard-toggle-link"
+          onClick={() => setShowBlog(false)}
+        >
+          WORK
+        </div>
+        <div
+          className="dashboard-toggle-link"
+          onClick={() => setShowBlog(true)}
+        >
+          BLOG
+        </div>
+      </div>
+      {showBlog ? <BlogForm /> : <WorkForm />}
     </div>
   );
 };
