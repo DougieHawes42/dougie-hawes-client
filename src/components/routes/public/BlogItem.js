@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 
 import { Link1 } from "../../utils/links";
 
+import setDate from "../../functions/setDate";
+
 import "./style.scss";
 
 const BlogItem = () => {
@@ -43,7 +45,7 @@ const BlogItem = () => {
           <div className="blog-item-title-box">
             <h3 className="blog-item-title">{blogItem.title}</h3>
             <h3 className="blog-item-subtitle">{blogItem.subtitle}</h3>
-            <h3 className="blog-item-date">{blogItem.updatedAt}</h3>
+            <h3 className="blog-item-date">{setDate(blogItem.updatedAt)}</h3>
           </div>
           <div className="blog-item-image-box">
             <img

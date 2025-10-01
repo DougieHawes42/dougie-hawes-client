@@ -95,10 +95,18 @@
     }
   }
   .blog-item-text {
-    margin-left: 50%;
     max-width: 1200px;
-    min-width: 1200px;
-    transform: translateX(-50%);
+    min-width: 300px;
+    padding: 21px;
+    h3 {
+      color: $colour3;
+      font-size: 35px;
+      margin-bottom: $y-padding;
+    }
+    p {
+      font-size: 21px;
+      margin-bottom: $y-padding;
+    }
   }
   .blog-item-cta {
     margin-left: 50%;
