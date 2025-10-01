@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import { useState } from "react";
 
 import { Button3 } from "../../utils/buttons";
@@ -29,10 +31,48 @@ const WorkForm = () => {
     category,
   } = formData;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("submitted");
+    try {
+      const data = new FormData();
+      data.append("title", formData.title);
+      data.append("subtitle", formData.subtitle);
+      data.append("html", formData.html);
+      data.append("hashtags", formData.hashtags);
+      data.append("siteLink", formData.siteLink);
+      data.append("clientCodeLink", formData.clientCodeLink);
+      data.append("serverCodeLink", formData.serverCodeLink);
+      data.append("category", formData.category);
+      // if (file) data.append("image", file);
+
+      const res = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/work`,
+        data,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+
+      console.log("✅ Work submitted:", res.data);
+
+      setFormData({
+        title: "",
+        subtitle: "",
+        html: "",
+        hashtags: "",
+        siteLink: "",
+        clientCodeLink: "",
+        serverCodeLink: "",
+        category: "",
+      });
+      setFile(null);
+    } catch (error) {
+      console.error(
+        "❌ Error submitting work:",
+        error.response?.data || error.message
+      );
+    }
   };
 
   const handleTextChange = (e) => {
@@ -89,6 +129,15 @@ const WorkForm = () => {
           onChange={handleTextChange}
           value={serverCodeLink}
         />
+        <div onClick={() => setFormData({ ...formData, category: "app" })}>
+          APP
+        </div>
+        <div onClick={() => setFormData({ ...formData, category: "site" })}>
+          SITE
+        </div>
+        <div onClick={() => setFormData({ ...formData, category: "game" })}>
+          GAME
+        </div>
         <Button3 />
       </form>
     </div>

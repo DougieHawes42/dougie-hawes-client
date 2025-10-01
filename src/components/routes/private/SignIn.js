@@ -8,6 +8,7 @@ import "./style.scss";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -16,31 +17,23 @@ const SignIn = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      navigate("/dashboard"); // redirect if logged in already
+      navigate("/dashboard");
     }
   }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const res = await fetch(
-      //   `${process.env.REACT_APP_BACKEND_URL}/auth/signin`,
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(formData),
-      //   }
-      // );
-
-      const res = await fetch(`http://localhost:5000/auth/signin`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/auth/signin`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
 
@@ -66,12 +59,13 @@ const SignIn = () => {
         />
         <Input1
           label="password"
-          type="password"
+          type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) =>
             setFormData({ ...formData, password: e.target.value })
           }
         />
+        <p onClick={() => setShowPassword(!showPassword)}>show password</p>
         <Button3 />
       </form>
     </div>

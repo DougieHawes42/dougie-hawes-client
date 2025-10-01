@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import "./style.scss";
 
 export const Input1 = ({ label, type = "text", name, value, onChange }) => (

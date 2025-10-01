@@ -12,10 +12,11 @@ const BlogForm = () => {
     title: "",
     subtitle: "",
     html: "",
+    cta: "",
   });
   const [file, setFile] = useState(null);
 
-  const { title, subtitle, html } = formData;
+  const { title, subtitle, html, cta } = formData;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +26,7 @@ const BlogForm = () => {
       data.append("title", formData.title);
       data.append("subtitle", formData.subtitle);
       data.append("html", formData.html);
+      data.append("cta", formData.cta);
       if (file) data.append("image", file);
 
       const res = await axios.post(
@@ -37,7 +39,7 @@ const BlogForm = () => {
 
       console.log("✅ Blog submitted:", res.data);
 
-      setFormData({ title: "", subtitle: "", html: "" });
+      setFormData({ title: "", subtitle: "", html: "", cta: "" });
       setFile(null);
     } catch (error) {
       console.error(
@@ -90,6 +92,12 @@ const BlogForm = () => {
             onChange={handleFileChange}
           />
         </div>
+        <Input1
+          label="cta"
+          name="cta"
+          onChange={handleTextChange}
+          value={cta}
+        />
         <Button3 />
       </form>
     </div>
