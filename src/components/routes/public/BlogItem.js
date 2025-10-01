@@ -61,7 +61,7 @@ const BlogItem = () => {
             }}
           ></div>
           <div className="blog-item-cta">
-            <div className="blog-item-cta-text"></div>
+            <div className="blog-item-cta-text">{blogItem.cta}</div>
             <div className="blog-item-cta-link-container">
               <Link1 to="/contact" text="contact" />
             </div>

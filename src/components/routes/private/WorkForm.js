@@ -18,7 +18,7 @@ const WorkForm = () => {
     serverCodeLink: "",
     category: "",
   });
-  const [file, setFile] = useState(null);
+  const [files, setFiles] = useState([]);
 
   const {
     title,
@@ -31,21 +31,33 @@ const WorkForm = () => {
     category,
   } = formData;
 
+  const handleFilesChange = (e) => {
+    const newFiles = Array.from(e.target.files);
+    setFiles((prev) => [...prev, ...newFiles]); // append instead of replace
+  };
+
+  const handleTextChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const data = new FormData();
-      data.append("title", formData.title);
-      data.append("subtitle", formData.subtitle);
-      data.append("html", formData.html);
-      data.append("hashtags", formData.hashtags);
-      data.append("siteLink", formData.siteLink);
-      data.append("clientCodeLink", formData.clientCodeLink);
-      data.append("serverCodeLink", formData.serverCodeLink);
-      data.append("category", formData.category);
-      // if (file) data.append("image", file);
+    const data = new FormData();
 
+    Object.keys(formData).forEach((key) => {
+      data.append(key, formData[key]);
+    });
+
+    for (let i = 0; i < files.length; i++) {
+      data.append("images", files[i]);
+    }
+
+    try {
       const res = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/work`,
         data,
@@ -53,8 +65,6 @@ const WorkForm = () => {
           headers: { "Content-Type": "multipart/form-data" },
         }
       );
-
-      console.log("✅ Work submitted:", res.data);
 
       setFormData({
         title: "",
@@ -66,21 +76,10 @@ const WorkForm = () => {
         serverCodeLink: "",
         category: "",
       });
-      setFile(null);
-    } catch (error) {
-      console.error(
-        "❌ Error submitting work:",
-        error.response?.data || error.message
-      );
+      setFiles([]);
+    } catch (err) {
+      console.error(err.response?.data || err.message);
     }
-  };
-
-  const handleTextChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
   };
 
   return (
@@ -137,6 +136,21 @@ const WorkForm = () => {
         </div>
         <div onClick={() => setFormData({ ...formData, category: "game" })}>
           GAME
+        </div>
+        <input
+          type="file"
+          name="images"
+          multiple
+          onChange={handleFilesChange}
+          className="border p-2"
+        />
+        <div className="flex gap-2 flex-wrap">
+          {files.length > 0 &&
+            Array.from(files).map((file, idx) => (
+              <span key={idx} className="text-sm bg-gray-100 p-1 rounded">
+                {file.name}
+              </span>
+            ))}
         </div>
         <Button3 />
       </form>

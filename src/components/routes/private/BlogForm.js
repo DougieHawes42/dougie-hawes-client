@@ -23,10 +23,10 @@ const BlogForm = () => {
 
     try {
       const data = new FormData();
-      data.append("title", formData.title);
-      data.append("subtitle", formData.subtitle);
-      data.append("html", formData.html);
-      data.append("cta", formData.cta);
+      data.append("title", title);
+      data.append("subtitle", subtitle);
+      data.append("html", html);
+      data.append("cta", cta);
       if (file) data.append("image", file);
 
       const res = await axios.post(
