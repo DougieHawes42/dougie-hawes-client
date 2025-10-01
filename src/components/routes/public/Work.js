@@ -86,7 +86,14 @@ const Work = () => {
       </div>
       <div className="work-grid">
         {workItems ? (
-          workItems.map((w) => <Card1 key={w._id} title={w.title} />)
+          workItems.map((w) => (
+            <Card1
+              key={w._id}
+              id={w._id}
+              title={w.title}
+              image={`${process.env.REACT_APP_BACKEND_URL}${w.images[0].url}`}
+            />
+          ))
         ) : (
           <p>loading...</p>
         )}

@@ -23,8 +23,8 @@ const BlogItem = () => {
         );
 
         setBlogItem(res.data);
-      } catch (err) {
-        console.error("Error fetching blog item:", err);
+      } catch (error) {
+        console.error("Error fetching blog item:", error);
       }
     };
 

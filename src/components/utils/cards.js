@@ -5,7 +5,7 @@ import { Button2 } from "./buttons";
 
 import "./style.scss";
 
-export const Card1 = ({ siteLink, image, title, description }) => (
+export const Card1 = ({ id, siteLink, image, title, description }) => (
   <motion.div
     initial={{ scale: 0 }}
     whileInView={{ scale: 1 }}
@@ -15,7 +15,7 @@ export const Card1 = ({ siteLink, image, title, description }) => (
   >
     <img className="card1-image" src={image} alt="" />
     <div className="card1-hover-text">
-      <Link to={`/work/${title}`}>
+      <Link to={`/work/${id}`}>
         <h3 className="card1-hover-text-title">{title}</h3>
         <p className="card1-hover-text-description">{description}</p>
       </Link>
