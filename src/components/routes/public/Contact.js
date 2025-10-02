@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FaDev,
   FaGithub,
@@ -22,21 +22,27 @@ import "./style.scss";
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [files, setFiles] = useState([]);
 
   const isValidEmail = (value) => /\S+@\S+\.\S+/.test(value);
 
   const isFormValid = isValidEmail(email) && message.trim().length > 0;
 
-  const [status, setStatus] = useState(null);
-
-  const handleChange = (e) => {};
+  const handleFilesChange = (e) => {
+    const newFiles = Array.from(e.target.files);
+    setFiles((prev) => [...prev, ...newFiles]); // append instead of replace
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-    setTimeout(() => {
-      setStatus("Message sent successfully!");
-    }, 1500);
+
+    if (isFormValid) {
+      console.log(email);
+      console.log(message);
+      console.log(files);
+    } else {
+      console.log("incomplete form");
+    }
   };
 
   return (
@@ -84,7 +90,7 @@ const Contact = () => {
                 type="file"
                 name="file"
                 id="file"
-                onChange={handleChange}
+                onChange={handleFilesChange}
               />
             </div>
             <button
@@ -95,7 +101,6 @@ const Contact = () => {
               SEND
             </button>
           </form>
-          {status && <p>{status}</p>}
           <div className="contact-links">
             <div className="contact-links-section">
               <h3 className="contact-links-section-title">Other Ways</h3>

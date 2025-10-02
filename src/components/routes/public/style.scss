@@ -118,7 +118,7 @@
     }
     .blog-item-cta-link-container {
       border: 2px solid $colour3;
-      margin-left: 50%;
+      margin: $y-padding 0 $y-padding 50%;
       text-align: center;
       transform: translateX(-50%);
       width: 180px;
